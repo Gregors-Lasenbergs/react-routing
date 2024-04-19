@@ -39,8 +39,9 @@ function Movies() {
     };
     const loadAllCardsFromDb = async () => {
         const moviesFromDb = await getAllMovies();
+        const movies2010AndAbove = moviesFromDb.filter(movie => movie.year >= '2013');
         console.log("Tasks from DB", moviesFromDb);
-        moviesFromDb.forEach((movie: MovieProps) => {
+        movies2010AndAbove.forEach((movie: MovieProps) => {
             handleMovieCreated(movie);
         });
     };

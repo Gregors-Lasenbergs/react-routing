@@ -10,6 +10,7 @@ const router = createBrowserRouter([
     { path: '/', element: <App /> },
     { path: '/about', element: <AboutUs /> },
     { path: '/movies', element: <Movies /> },
+    { path: 'http://localhost:3004/movies/:id', element: <Movies /> },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
