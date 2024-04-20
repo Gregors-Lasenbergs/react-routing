@@ -5,12 +5,13 @@ import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import AboutUs from "./components/AboutUs.tsx";
 import Movies from "./components/Movies.tsx";
+import FullScreenMovie from "./components/FullscreenMovie.tsx";
 
 const router = createBrowserRouter([
     { path: '/', element: <App /> },
     { path: '/about', element: <AboutUs /> },
     { path: '/movies', element: <Movies /> },
-    { path: 'http://localhost:3004/movies/:id', element: <Movies /> },
+    { path: '/movies/:id', element: <FullScreenMovie /> }, // New route for fullscreen movie
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

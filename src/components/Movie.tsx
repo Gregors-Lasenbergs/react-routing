@@ -1,20 +1,17 @@
-import './Movie.css'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Movie.css";
 import { MovieProps } from "./Movies";
-import {useState} from "react";
 
 export const Movie = (props: MovieProps) => {
 
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    const handleCardClick = () => {
-        setIsExpanded(!isExpanded);
-    };
-    
     return (
-        <div className={`movie ${isExpanded ? "is-expanded" : ""}`} onClick={handleCardClick}>
-            <img src={props.posterUrl} alt={props.title} />
-            <h2> {props.title} </h2>
-            <p> {props.plot} </p>
+        <div className={`movie`}>
+            <Link to={`/movies/${props.id}`}>
+                <img src={props.posterUrl} alt={props.title} />
+                <h2>{props.title}</h2>
+                <p>{props.plot}</p>
+            </Link>
         </div>
     );
 };

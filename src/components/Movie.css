@@ -38,3 +38,11 @@ img{
     z-index: 1000;
 }
 
+li{
+    a:visited{
+        color: #1a1a1a;
+    }
+    a:hover{
+        color: gray;
+    }}
+
