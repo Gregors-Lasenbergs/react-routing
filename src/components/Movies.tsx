@@ -4,26 +4,15 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {Movie} from "./Movie.tsx";
 
-type MovieInspectProps = {
-    onMovieClick: (movie: Movie) => void;
-}
-
 export type MovieProps = {
     title: string
     plot: string
     id: number
     posterUrl: string
-    isFullScreen: boolean
-    onClick: (id: number) => void
 }
 
 function Movies() {
-    const [fullscreenMovieId, setFullscreenMovieId] = useState(null);
     const [movies, setMovies] = useState<MovieProps[]>([]);
-
-    const handleMovieClick = () => {
-        setFullscreenMovieId(id === fullscreenMovieId ? null : id);
-    };
     
     const getAllMovies = async () => {
         const movieUrl = 'http://localhost:3004/movies';
@@ -72,8 +61,7 @@ function Movies() {
                         plot={movie.plot}
                         id={movie.id}
                         posterUrl={movie.posterUrl}
-                        isFullScreen={fullscreenMovieId === movie.id}
-                        onClick={handleMovieClick}/>
+                    />
                 ))}
             </div>
         </div>
